@@ -89,6 +89,38 @@ int main()
 	{
 		printf("\u2573");
 	}
+	for(int i=0; i < 2; ++i)
+	{
+		printf(" ");
+	}
+	printf("\u255A");
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u2550");
+	}
+	printf("\n");
+	for(int i=0; i < 29; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	printf("\n");
+	for(int i=0; i < 27; ++i)
+	{
+		printf("\u254C");
+	}
+	for(int i=0; i < 2; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	printf("\n");
 	printf("\n");
 	return 0;
 }
