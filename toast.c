@@ -108,11 +108,28 @@ int main()
 		printf("\u2573");
 	}
 	printf("\n");
-	for(int i=0; i < 27; ++i)
+	for(int i=0; i < 26; ++i)
 	{
 		printf("\u254C");
 	}
-	for(int i=0; i < 2; ++i)
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u254C");
+	}
+	printf("\n");
+	for(int i=0; i < 29; ++i)
 	{
 		printf(" ");
 	}
@@ -121,6 +138,154 @@ int main()
 		printf("\u2573");
 	}
 	printf("\n");
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u2550");
+	}
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u2550");
+	}
 	printf("\n");
+	for(int i=0; i < 29; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	printf("\n");
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u254C");
+	}
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u254C");
+	}
+	printf("\n");
+	for(int i=0; i < 29; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	printf("\n");
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u2550");
+	}
+	printf("\u2557");
+	for(int i=0; i < 2; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 43; ++i)
+	{
+		printf("\u2573");
+	}
+	for(int i=0; i < 2; ++i)
+	{
+		printf(" ");
+	}
+	printf("\u2554");
+	for(int i=0; i < 26; ++i)
+	{
+		printf("\u2550");
+	}
+	printf("\n");
+	for(int i=0; i < 26; ++i)
+	{
+		printf(" ");
+	}
+	printf("\u2551");
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	for(int i=0; i < 41; ++i)
+	{
+		printf("\u2573");
+	}
+	for(int i=0; i < 3; ++i)
+	{
+		printf(" ");
+	}
+	printf("\u2551");
+	printf("\n");
+	for(int i=0; i < 2; ++i)
+	{
+		for(int i=0; i < 26; ++i)
+		{
+			printf(" ");
+		}
+		printf("\u2551");
+		for (int i = 0; i < 47; ++i)
+		{
+			printf(" ");
+		}
+		printf("\u2551\n");
+	}
+	//Lower "rond-point"
+	for (int i = 0; i < 26; ++i)
+	{
+		printf(" ");
+	}
+	printf("\u255A");
+	for (int i = 0; i < 19; ++i)
+	{
+		printf("\u2550");
+	}
+	printf("\u2557");
+	for(int i = 0; i<7; ++i)
+	{
+		printf(" ");
+	}
+	printf("\u2554");
+	for (int i = 0; i < 19; ++i)
+	{
+		printf("\u2550");
+	}
+	printf("\u255D");
+	printf("\n");
+	for(int i=0; i<19; ++i)
+	{
+		for(int k=0; k<46; ++k)
+		{
+			printf(" ");
+		}
+		for(int k=0; k<2; ++k)
+		{
+			printf("\u2551 \u254E ");
+		}
+		printf("\u2551\n");
+	}
 	return 0;
 }
