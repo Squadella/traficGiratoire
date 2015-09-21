@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
 	//Resize console
+	printf("cock");
 	system("printf '\e[8;51;101t'");
 	system("clear");
+	/*wchar_t *diern;
+	wchar_t *toast;
+	toast= L"\u2551";
+	diern= L"\u254E";*/
 	//Trace the north road
 	for(int i=0; i<18; ++i)
 	{
@@ -15,9 +21,9 @@ int main()
 		}
 		for(int k=0; k<2; ++k)
 		{
-			printf("\u2551 \u254E ");
+		//	printf("%ls %ls", toast, diern);
 		}
-		printf("\u2551\n");
+	//	printf("\u2551\n");
 	}
 	//Trace the upper "rond-point"
 	for (int i = 0; i < 26; ++i)

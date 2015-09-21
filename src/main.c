@@ -6,6 +6,14 @@
 
 int main()
 {
-  printf("Hello World!");
-  return 0;
+    char board[51][101];
+    for(int i=0; i<51; ++i)
+    {
+        for(int k=0; k<101; ++k)
+        {
+            board[i][k]='A';
+        }
+    }
+    affichage(board);
+    return 0;
 }
