@@ -6,7 +6,7 @@ SRC=src/main.c src/interface.c src/car.c
 INC=include/interface.h include/car.h
 OBJ=interface.o car.o main.o
 
-all: main
+all: main.out
 
 interface.o: src/interface.c include/interface.h
 	$(CC) $(CFLAGS) -c $^ -I./$(INCDIR)

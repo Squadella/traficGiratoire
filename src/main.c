@@ -11,7 +11,7 @@ int main()
     {
         for(int k=0; k<101; ++k)
         {
-            board[i][k]='A';
+            board[i][k]=(char)((k%20)+65);
         }
     }
     affichage(board);
