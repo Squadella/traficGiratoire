@@ -8,6 +8,9 @@ OBJ=interface.o car.o main.o routes.o
 
 all: main.out
 
+run: main.out
+	./main.out
+
 interface.o: src/interface.c include/interface.h
 	$(CC) $(CFLAGS) -c $^ -I./$(INCDIR)
 

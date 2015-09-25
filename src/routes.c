@@ -2,7 +2,7 @@
 
 void in_north(char board[51][101], Car vehicle)
 {
-  
+
 }
 void out_north(char board[51][101], Car vehicle)
 {
