@@ -6,7 +6,7 @@ SRC=src/main.c src/interface.c src/car.c src/routes.c
 INC=include/interface.h include/car.h include/routes.h
 OBJ=interface.o car.o main.o routes.o
 
-all: main
+all: main.out
 
 interface.o: src/interface.c include/interface.h
 	$(CC) $(CFLAGS) -c $^ -I./$(INCDIR)
@@ -20,10 +20,10 @@ routes.o: src/routes.c include/routes.h
 main.o: $(SRC) $(INC)
 	$(CC) $(CFLAGS) -c $^ -I./$(INCDIR)
 
-main: $(OBJ)
+main.out: $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@ -I./$(INCDIR)
 
 .PHONY: clean
 
 clean:
-	rm -f *.o include/*.gch
+	rm -f *.o *.out include/*.gch
