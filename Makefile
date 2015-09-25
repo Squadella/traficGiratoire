@@ -17,10 +17,10 @@ car.o: src/car.c include/car.h
 main.o: $(SRC) $(INC)
 	$(CC) $(CFLAGS) -c $^ -I./$(INCDIR)
 
-main: $(OBJ)
+main.out: $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@ -I./$(INCDIR)
 
 .PHONY: clean
 
 clean:
-	rm -f *.o
+	rm -f *.o *.out include/*.gch
