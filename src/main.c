@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
 
 #include "car.h"
 #include "interface.h"
@@ -8,14 +9,21 @@
 
 int main()
 {
+    srand(time(NULL));
     char board[51][101];
-    size_t j = 0;
-    for(int i=0; i<51; ++i)
+    listCar existingCar=NULL;
+    for (int i = 0; i < 51; ++i)
     {
-        for(int k=0; k<101; ++k)
+        for(int j=0; j < 101; ++j)
         {
-            board[i][k]=' '/*(char)((k%26)+65)*/;
+            board[i][j]=' ';
         }
+    }
+    while (1)
+    {
+        affichage(board);
+        sleep(1);
+        spawnCar(board, 10, false, existingCar);
     }
     return 0;
 }

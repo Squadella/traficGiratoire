@@ -2,6 +2,8 @@
 #define CAR_H
 
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef enum Direction
 {
@@ -48,6 +50,16 @@ struct Car
 
   bool state; //TRUE=active, FALSE=inactive
   bool broken; //TRUE=broken down, FALSE=intact
+  bool dangerous;
+
+  struct Car *next;
 };
+
+typedef Car* listCar;
+
+char chooseDest();
+listCar setDest(listCar tmpCar);
+listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous, Section zone, listCar existingCar);
+listCar spawnCar(char board[51][101], int probability, bool dangerous, listCar existingCar);
 
 #endif

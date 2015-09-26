@@ -4,8 +4,8 @@
 
 void affichage(char board[51][101])
 {
-    system("printf '\e[8;51;101t'");
-	  system("clear");
+    system("printf '\e[8;52;101t'");
+    system("clear");
     printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║\n", board[0][44], board[0][48], board[0][52], board[0][56]);
     printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║\n", board[1][44], board[1][48], board[1][52], board[1][56]);
     printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║\n", board[2][44], board[2][48], board[2][52], board[2][56]);
