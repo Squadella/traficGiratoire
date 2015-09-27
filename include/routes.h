@@ -3,7 +3,8 @@
 
 #include "car.h"
 
-void in_north(char board[51][101], Car vehicle);
+void in_north(char board[51][101], Car* vehicle);
+/*
 void out_north(char board[51][101], Car vehicle);
 
 void in_east(char board[51][101], Car vehicle);
@@ -47,5 +48,5 @@ void west_to_west(char board[51][101], Car vehicle);
 void west_to_north(char board[51][101], Car vehicle);
 void west_to_east(char board[51][101], Car vehicle);
 void west_to_south(char board[51][101], Car vehicle);
-
+*/
 #endif
