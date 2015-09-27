@@ -5,7 +5,8 @@
 
 #include "car.h"
 #include "interface.h"
-#include "routes.h"
+#include "moves.h"
+
 
 int main()
 {
@@ -19,11 +20,15 @@ int main()
             board[i][j]=' ';
         }
     }
-    while (1)
+    int i=0;
+    while (i<1000)
     {
         affichage(board);
+        printf("%d\n", i);
+        ++i;
         sleep(1);
-        spawnCar(board, 10, false, existingCar);
+        existingCar=spawnCar(board, 10, false, existingCar);
+        moveAllCars(board, existingCar);
     }
     return 0;
 }

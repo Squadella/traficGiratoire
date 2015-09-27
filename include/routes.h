@@ -2,6 +2,7 @@
 #define ROUTES_H
 
 #include "car.h"
+#include "moves.h"
 
 void in_north(char board[51][101], Car* vehicle);
 /*

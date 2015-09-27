@@ -56,5 +56,5 @@ void affichage(char board[51][101])
     printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║\n", board[47][44], board[47][48], board[47][52], board[47][56]);
     printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║\n", board[48][44], board[48][48], board[48][52], board[48][56]);
     printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║\n", board[49][44], board[49][48], board[49][52], board[49][56]);
-    printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║\n", board[50][44], board[50][48], board[50][52], board[50][56]);
+    printf("                                          ║ %c ╎ %c ║ %c ╎ %c ║", board[50][44], board[50][48], board[50][52], board[50][56]);
 }

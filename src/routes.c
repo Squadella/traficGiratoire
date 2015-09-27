@@ -2,8 +2,10 @@
 
 void in_north(char board[51][101], Car* vehicle)
 {
+    printf("SHITE\n");
     if((vehicle->x_pos==15 && (vehicle->y_pos==44 || vehicle->y_pos==48))||(vehicle->speed && (vehicle->x_pos==14 && (vehicle->y_pos==44 || vehicle->y_pos==48))))
     {
+        printf("damnson\n");
         //Changement zone!
     }
     else
