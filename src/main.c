@@ -27,8 +27,8 @@ int main()
         printf("%d\n", i);
         ++i;
         sleep(1);
-        existingCar=spawnCar(board, 10, false, existingCar);
         moveAllCars(board, existingCar);
+        existingCar=spawnCar(board, 10, false, existingCar);
     }
     return 0;
 }

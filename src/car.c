@@ -81,99 +81,49 @@ listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous,
 
 listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar existingCar)
 {
+    bool speed=false;
+    char direction=chooseDest();
+    if(rand()%3==0)
+    {
+        speed=true;
+    }
     if(board[0][44]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(0, 44, speed, direction, dangerous, s_in_north, existingCar);
         board[0][44]=direction;
     }
     if(board[0][48]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(0, 48, speed, direction, dangerous, s_in_north, existingCar);
         board[0][48]=direction;
     }
     if(board[22][100]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(22, 100, speed, direction, dangerous, s_in_east, existingCar);
         board[22][100]=direction;
     }
     if(board[24][100]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(24, 100, speed, direction, dangerous, s_in_east, existingCar);
         board[24][100]=direction;
     }
     if(board[22][0]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(22, 0, speed, direction, dangerous, s_in_west, existingCar);
         board[22][0]=direction;
     }
     if(board[24][0]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(24, 0, speed, direction, dangerous, s_in_west, existingCar);
         board[24][0]=direction;
     }
     if(board[50][52]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(50, 52, speed, direction, dangerous, s_in_south, existingCar);
         board[50][52]=direction;
     }
     if(board[50][56]==' ' && (rand()%probabilty)==0)
     {
-        bool speed;
-        char direction;
-        if(rand()%3==0)
-        {
-            speed=true;
-        }
-        direction=chooseDest();
         existingCar=newCar(50, 56, speed, direction, dangerous, s_in_south, existingCar);
         board[50][56]=direction;
     }

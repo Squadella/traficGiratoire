@@ -1,0 +1,11 @@
+spawn zone:
+    - North : 0|44 & 0|48
+    - East : 22|1OO & 24|100
+    - West : 22|0 & 24|0
+    - South : 50|52 & 50|56
+
+end zone:
+    - in_North : 15|44 & 15|48
+    - in_East : 22|74 & 24|74
+    - in_West : 22|26 & 24|26
+    - in_South : 35|52 & 35|56
