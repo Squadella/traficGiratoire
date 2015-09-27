@@ -1,9 +1,33 @@
 #include "routes.h"
 
-void in_north(char board[51][101], Car vehicle)
+void in_north(char board[51][101], Car* vehicle)
 {
-
-}
+    if((vehicle->x_pos==15 && (vehicle->y_pos==44 || vehicle->y_pos==48))||(vehicle->speed && (vehicle->x_pos==14 && (vehicle->y_pos==44 || vehicle->y_pos==48))))
+    {
+        //Changement zone!
+    }
+    else
+    {
+        if (vehicle->speed==false)
+        {
+            if(board[vehicle->x_pos+1][vehicle->y_pos]==' ')
+            {
+                moveCar(vehicle, board, 1, 0);
+            }
+        }
+        else
+        {
+            if (board[vehicle->x_pos+2][vehicle->y_pos]==' ')
+            {
+                moveCar(vehicle, board, 2, 0);
+            }
+            else if (board[vehicle->x_pos+1][vehicle->y_pos]==' ')
+            {
+                moveCar(vehicle, board, 1, 0);
+            }
+        }
+    }
+}/*
 void out_north(char board[51][101], Car vehicle)
 {
 }
@@ -124,3 +148,4 @@ void west_to_south(char board[51][101], Car vehicle)
 {
 
 }
+*/
