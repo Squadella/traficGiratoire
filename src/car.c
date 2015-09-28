@@ -107,15 +107,15 @@ listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar ex
         existingCar=newCar(24, 100, speed, direction, dangerous, s_in_east, existingCar);
         board[24][100]=direction;
     }
-    if(board[22][0]==' ' && (rand()%probabilty)==0)
+    if(board[26][0]==' ' && (rand()%probabilty)==0)
     {
-        existingCar=newCar(22, 0, speed, direction, dangerous, s_in_west, existingCar);
-        board[22][0]=direction;
+        existingCar=newCar(26, 0, speed, direction, dangerous, s_in_west, existingCar);
+        board[26][0]=direction;
     }
-    if(board[24][0]==' ' && (rand()%probabilty)==0)
+    if(board[28][0]==' ' && (rand()%probabilty)==0)
     {
-        existingCar=newCar(24, 0, speed, direction, dangerous, s_in_west, existingCar);
-        board[24][0]=direction;
+        existingCar=newCar(28, 0, speed, direction, dangerous, s_in_west, existingCar);
+        board[28][0]=direction;
     }
     if(board[50][52]==' ' && (rand()%probabilty)==0)
     {

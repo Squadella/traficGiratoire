@@ -16,17 +16,15 @@ void out_south(char board[51][101], Car* vehicle);
 void in_west(char board[51][101], Car* vehicle);
 void out_west(char board[51][101], Car* vehicle);
 
-void inner_north_east(char board[51][101], Car* vehicle);
-void outer_north_east(char board[51][101], Car* vehicle);
+void round_north(char board[51][101], Car* vehicle);
+void round_east(char board[51][101], Car* vehicle);
+void round_south(char board[51][101], Car* vehicle);
+void round_west(char board[51][101], Car* vehicle);
 
-void inner_south_east(char board[51][101], Car* vehicle);
-void outer_south_east(char board[51][101], Car* vehicle);
-
-void inner_south_west(char board[51][101], Car* vehicle);
-void outer_south_west(char board[51][101], Car* vehicle);
-
-void inner_north_west(char board[51][101], Car* vehicle);
-void outer_north_west(char board[51][101], Car* vehicle);
+void corner_north_east(char board[51][101], Car* vehicle);
+void corner_south_east(char board[51][101], Car* vehicle);
+void corner_south_west(char board[51][101], Car* vehicle);
+void corner_north_west(char board[51][101], Car* vehicle);
 
 //Complete itineraries
   //Starting from the north
