@@ -54,7 +54,7 @@ void in_east(char board[51][101], Car* vehicle)
     {
         //Changement zone!
     }
-    else
+    else if (vehicle->y_pos!=74)
     {
         if (vehicle->speed==false)
         {
@@ -93,7 +93,7 @@ void in_south(char board[51][101], Car* vehicle)
     {
         //Changement zone!
     }
-    else
+    else if(vehicle->x_pos!=35)
     {
         if (vehicle->speed==false)
         {
@@ -128,11 +128,11 @@ void in_west(char board[51][101], Car* vehicle)
             moveCar(vehicle, board, 0, 1);
         }
     }
-    else if((vehicle->x_pos==26 || vehicle->x_pos==28) && vehicle->y_pos==26)
+    else if(((vehicle->x_pos==26 || vehicle->x_pos==28) && vehicle->y_pos==26) && (board[vehicle->x_pos][vehicle->y_pos+1]==' '))
     {
-        //Changement zone!
+        changeZone(vehicle, board, 0, 1, s_round_west);
     }
-    else
+    else if(vehicle->y_pos!=26)
     {
         if (vehicle->speed==false)
         {
@@ -160,14 +160,14 @@ void out_west(char board[51][101], Car* vehicle)
 
 void round_north(char board[51][101], Car* vehicle)
 {
-    //Changement de voie
     if(((vehicle->x_pos==16 && vehicle->y_pos==28) && board[17][27]==' ')||((vehicle->x_pos==17 && vehicle->y_pos==29) && board[18][28]==' '))
     {
-        changeZone(vehicle, board, 1, -1, s_round_east);
+        changeZone(vehicle, board, 1, -1, s_round_west);
     }
+    //Changement de voie
     else if((vehicle->destination==north || vehicle->destination==east) && vehicle->x_pos==16)
     {
-        if((board[vehicle->x_pos+1][vehicle->y_pos]=' ') && (board[vehicle->x_pos+1][vehicle->y_pos+1]==' '))
+        if((board[vehicle->x_pos+1][vehicle->y_pos]==' ') && (board[vehicle->x_pos+1][vehicle->y_pos+1]==' '))
         {
             moveCar(vehicle, board, 1, 0);
         }
