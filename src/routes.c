@@ -191,7 +191,24 @@ void round_south(char board[51][101], Car* vehicle)
 }
 void round_west(char board[51][101], Car* vehicle)
 {
-
+    if((vehicle->x_pos==33 && vehicle->y_pos==27 && board[34][28]==' ') || (vehicle->x_pos==32 && vehicle->y_pos==28 && board[33][29]==' '))
+    {
+        changeZone(vehicle, board, 1, 1, s_round_south);
+    }
+    else if((vehicle->destination==north || vehicle->destination==west) && vehicle->y_pos==27)
+    {
+        if(board[vehicle->x_pos][vehicle->y_pos+1]==' ' && board[vehicle->x_pos-1][vehicle->y_pos+1]==' ')
+        {
+            moveCar(vehicle, board, 0, 1);
+        }
+    }
+    else if (!(vehicle->x_pos==33 && vehicle->y_pos==27) && !(vehicle->x_pos==32 && vehicle->y_pos==28))
+    {
+        if (board[vehicle->x_pos+1][vehicle->y_pos]==' ')
+        {
+            moveCar(vehicle, board, 1, 0);
+        }
+    }
 }
 
 void corner_north_east(char board[51][101], Car* vehicle)

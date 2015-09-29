@@ -12,3 +12,4 @@ end zone :
 
 start zone :
     - round_north : 16|28 à 16|72
+    - round_west : 17|27 à 33|27 && 18|28 à 32|28
