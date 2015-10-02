@@ -164,8 +164,22 @@ void round_north(char board[51][101], Car* vehicle)
     {
         changeZone(vehicle, board, 1, -1, s_round_west);
     }
+    else if (vehicle->destination==north && vehicle->x_pos==17 && vehicle->y_pos>50 && (vehicle->y_pos==51 || vehicle->y_pos==52))
+    {
+        if(board[vehicle->x_pos-1][vehicle->y_pos]==' ')
+        {
+            moveCar(vehicle, board, -1, 0);
+        }
+    }
+    else if (vehicle->destination==north && vehicle->x_pos==16 && (vehicle->y_pos==52 || vehicle->y_pos==56) && vehicle->y_pos>50)
+    {
+        if(board[vehicle->x_pos-1][vehicle->y_pos]==' ')
+        {
+            changeZone(vehicle, board, -1, 0, s_out_north);
+        }
+    }
     //Changement de voie
-    else if((vehicle->destination==north || vehicle->destination==east) && vehicle->x_pos==16)
+    else if((vehicle->destination==north || vehicle->destination==east) && vehicle->x_pos==16 && vehicle->y_pos<50)
     {
         if((board[vehicle->x_pos+1][vehicle->y_pos]==' ') && (board[vehicle->x_pos+1][vehicle->y_pos+1]==' '))
         {
@@ -195,11 +209,25 @@ void round_west(char board[51][101], Car* vehicle)
     {
         changeZone(vehicle, board, 1, 1, s_round_south);
     }
-    else if((vehicle->destination==north || vehicle->destination==west) && vehicle->y_pos==27)
+    else if((vehicle->destination==north || vehicle->destination==west) && vehicle->y_pos==27 && vehicle->x_pos>25)
     {
         if(board[vehicle->x_pos][vehicle->y_pos+1]==' ' && board[vehicle->x_pos-1][vehicle->y_pos+1]==' ')
         {
             moveCar(vehicle, board, 0, 1);
+        }
+    }
+    else if ((vehicle->destination==west) && (vehicle->x_pos==23) && (vehicle->y_pos==28))
+    {
+        if(board[vehicle->x_pos][vehicle->y_pos-1]==' ')
+        {
+            moveCar(vehicle, board, 0, -1);
+        }
+    }
+    else if((vehicle->destination==west && (vehicle->x_pos==22 || vehicle->x_pos==24)) && vehicle->y_pos==27)
+    {
+        if(board[vehicle->x_pos][vehicle->y_pos-1]==' ')
+        {
+            changeZone(vehicle, board, 0, -1, s_out_west);
         }
     }
     else if (!(vehicle->x_pos==33 && vehicle->y_pos==27) && !(vehicle->x_pos==32 && vehicle->y_pos==28))
