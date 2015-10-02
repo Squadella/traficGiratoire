@@ -26,7 +26,7 @@ int main()
         affichage(board);
         printf("%d\n", i);
         ++i;
-        sleep(1);
+        usleep(150000);
         moveAllCars(board, existingCar);
         existingCar=spawnCar(board, 10, false, existingCar);
     }

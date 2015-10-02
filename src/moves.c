@@ -25,6 +25,12 @@ void moveAllCars(char board[51][101], listCar existingCar)
             case s_round_west:
                 round_west(board, tmp);
                 break;
+            case s_round_south:
+                round_south(board, tmp);
+                break;
+            case s_out_west:
+                out_west(board, tmp);
+                break;
             default:
                 break;
         }
@@ -44,4 +50,10 @@ void changeZone(Car* vehicle, char board[51][101], int x, int y, Section enterin
 {
     vehicle->current_section=entering;
     moveCar(vehicle, board, x, y);
+}
+
+void removeCar(Car* vehicle, char board[51][101])
+{
+    board[vehicle->x_pos][vehicle->y_pos]=' ';
+    vehicle->state=false;
 }

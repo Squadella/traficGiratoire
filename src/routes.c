@@ -156,6 +156,17 @@ void in_west(char board[51][101], Car* vehicle)
 }
 void out_west(char board[51][101], Car* vehicle)
 {
+    if(vehicle->y_pos==0)
+    {
+        removeCar(vehicle, board);
+    }
+    else
+    {
+        if(board[vehicle->x_pos][vehicle->y_pos-1]==' ')
+        {
+            moveCar(vehicle, board, 0, -1);
+        }
+    }
 }
 
 void round_north(char board[51][101], Car* vehicle)
@@ -164,14 +175,14 @@ void round_north(char board[51][101], Car* vehicle)
     {
         changeZone(vehicle, board, 1, -1, s_round_west);
     }
-    else if (vehicle->destination==north && vehicle->x_pos==17 && vehicle->y_pos>50 && (vehicle->y_pos==51 || vehicle->y_pos==52))
+    else if (vehicle->destination==north && vehicle->x_pos==17 && (vehicle->y_pos==51 || vehicle->y_pos==52))
     {
         if(board[vehicle->x_pos-1][vehicle->y_pos]==' ')
         {
             moveCar(vehicle, board, -1, 0);
         }
     }
-    else if (vehicle->destination==north && vehicle->x_pos==16 && (vehicle->y_pos==52 || vehicle->y_pos==56) && vehicle->y_pos>50)
+    else if (vehicle->destination==north && vehicle->x_pos==16 && (vehicle->y_pos==52 || vehicle->y_pos==56))
     {
         if(board[vehicle->x_pos-1][vehicle->y_pos]==' ')
         {
@@ -201,7 +212,38 @@ void round_east(char board[51][101], Car* vehicle)
 }
 void round_south(char board[51][101], Car* vehicle)
 {
-
+    if((vehicle->x_pos==33 && vehicle->y_pos==71 && board[vehicle->x_pos-1][vehicle->y_pos+1]==' ')||(vehicle->x_pos==34 && vehicle->y_pos==72 && board[vehicle->x_pos-1][vehicle->y_pos+1]==' '))
+    {
+        changeZone(vehicle, board, -1, 1, s_round_east);
+    }
+    else if(vehicle->destination==south && vehicle->x_pos==33 && (vehicle->y_pos==47 || vehicle->y_pos==48))
+    {
+        if(board[vehicle->x_pos+1][vehicle->y_pos]==' ')
+        {
+            moveCar(vehicle, board, 1, 0);
+        }
+    }
+    else if(vehicle->destination==south && vehicle->x_pos==34 && (vehicle->y_pos==44 || vehicle->y_pos==48))
+    {
+        if(board[vehicle->x_pos+1][vehicle->y_pos]==' ')
+        {
+            changeZone(vehicle, board, 1, 0, s_out_south);
+        }
+    }
+    else if((vehicle->destination==west || vehicle->destination==south) && vehicle->x_pos==33 && vehicle->y_pos>50)
+    {
+        if(board[vehicle->x_pos+1][vehicle->y_pos]==' ' && board[vehicle->x_pos+1][vehicle->y_pos-1]==' ')
+        {
+            moveCar(vehicle, board, 1, 0);
+        }
+    }
+    else if ((!(vehicle->x_pos==33 && vehicle->y_pos==71)) && (!(vehicle->x_pos==34 && vehicle->y_pos==72)))
+    {
+        if(board[vehicle->x_pos][vehicle->y_pos+1]==' ')
+        {
+            moveCar(vehicle, board, 0, 1);
+        }
+    }
 }
 void round_west(char board[51][101], Car* vehicle)
 {
