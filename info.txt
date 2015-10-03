@@ -17,3 +17,4 @@ start zone :
 exit zone:
     - round_north : 16|52 && 16|56
     - round_west : 22|27 && 23|27
+    - round_south : 34|44 && 34|48

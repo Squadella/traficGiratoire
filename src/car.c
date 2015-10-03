@@ -83,6 +83,7 @@ listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar ex
 {
     bool speed=false;
     char direction=chooseDest();
+
     if(rand()%3==0)
     {
         speed=true;
