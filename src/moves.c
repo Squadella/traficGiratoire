@@ -37,6 +37,12 @@ void moveAllCars(char board[51][101], listCar existingCar)
             case s_out_south:
                 out_south(board, tmp);
                 break;
+            case s_out_east:
+                out_east(board, tmp);
+                break;
+            case s_out_north:
+                out_north(board, tmp);
+                break;
             default:
                 break;
         }

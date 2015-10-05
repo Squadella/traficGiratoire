@@ -21,7 +21,7 @@ int main()
         }
     }
     int i=0;
-    while (i<1000)
+    while (1)
     {
         affichage(board);
         printf("%d\n", i);
