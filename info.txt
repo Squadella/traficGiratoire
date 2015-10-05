@@ -9,12 +9,15 @@ end zone :
     - in_East : 22|74 & 24|74
     - in_West : 26|26 & 28|26
     - in_South : 35|52 & 35|56
+    - round_east : 17|73 & 18|71
 
 start zone :
     - round_north : 16|28 à 16|72
     - round_west : 17|27 à 33|27 && 18|28 à 32|28
+    - round_east : 33|73 && 32|72
 
 exit zone:
     - round_north : 16|52 && 16|56
     - round_west : 22|27 && 23|27
     - round_south : 34|44 && 34|48
+    - round_east : 29|73 && 26|73
