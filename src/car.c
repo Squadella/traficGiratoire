@@ -130,3 +130,34 @@ listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar ex
     }
     return existingCar;
 }
+
+listCar deleteCar(listCar existingCar)
+{
+    if(existingCar==NULL)
+    {
+        return NULL;
+    }
+    listCar tmp = existingCar;
+    listCar tmp2 = existingCar->next;
+    //listCar tmp3 = (tmp2==NULL) ? (NULL) : (tmp2->next);
+    if(tmp->state==false)
+    {
+        free(existingCar);
+        return tmp2;
+    }
+    while (tmp2!=NULL)
+    {
+        if(tmp2->state==false)
+        {
+            tmp->next=tmp2->next;
+            free(tmp2);
+            tmp2=tmp->next;
+        }
+        else
+        {
+            tmp=tmp2;
+            tmp2=tmp2->next;
+        }
+    }
+    return existingCar;
+}
