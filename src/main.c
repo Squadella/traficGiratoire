@@ -13,6 +13,7 @@ int main()
     srand(time(NULL));
     char board[51][101];
     listCar existingCar=NULL;
+    unsigned int mode;
     struct timespec sleep_time;
     sleep_time.tv_sec = 0;
     sleep_time.tv_nsec = 40000000L; //125 000 000
@@ -25,6 +26,8 @@ int main()
         }
     }
     int i=0;
+    mode  = mainMenu();
+    
     while (1)
     {
         affichage(board);

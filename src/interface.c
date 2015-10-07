@@ -2,10 +2,45 @@
 
 /*                                              */ //46 espaces
 
+unsigned int mainMenu()
+{
+    system("clear");
+    system("printf '\e[8;52;101t'");
+
+    FILE *logo;
+    char tmp;
+    unsigned int mode = 0;
+
+    if((logo = fopen("resources/logo.txt", "r")) == NULL)
+        printf("Error opening logo.txt : %s\n", strerror(errno));
+
+    while(fscanf(logo, "%c", &tmp) != EOF)
+        printf("%c", tmp);
+
+    printf("Welcome, please choose a circulation mode : \n");
+    printf("\t1) Fluid\n");
+    printf("\t2) Dense\n");
+    printf("\t3) Dangerous\n");
+
+    do
+    {
+        if(scanf("%u", &mode) != 1)
+        {
+            printf("Please enter a correct mode number (1, 2 or 3).\n");
+            exit(-1);
+        }
+        else if(mode > 3 || mode == 0)
+            printf("Please enter a correct mode number (1, 2 or 3).\n");
+        fflush(stdin);
+    }while(mode > 3 || mode == 0);
+
+    return mode;
+}
+
 void affichage(char board[51][101])
 {
-    system("printf '\e[8;52;101t'");
     system("clear");
+
     printf("                                          \e[90m║\e[0m %c ╎ %c \e[90m║\e[0m %c ╎ %c \e[90m║\e[0m\n", board[0][44], board[0][48], board[0][52], board[0][56]);
     printf("                                          \e[90m║\e[0m %c ╎ %c \e[90m║\e[0m %c ╎ %c \e[90m║\e[0m\n", board[1][44], board[1][48], board[1][52], board[1][56]);
     printf("                                          \e[90m║\e[0m %c ╎ %c \e[90m║\e[0m %c ╎ %c \e[90m║\e[0m\n", board[2][44], board[2][48], board[2][52], board[2][56]);
