@@ -16,7 +16,7 @@ int main()
     unsigned int mode;
     struct timespec sleep_time;
     sleep_time.tv_sec = 0;
-    sleep_time.tv_nsec = 40000000L; //125 000 000
+    sleep_time.tv_nsec = 70000000L; //125 000 000
 
     for (int i = 0; i < 51; ++i)
     {
@@ -35,6 +35,7 @@ int main()
         ++i;
         nanosleep(&sleep_time, NULL);
         moveAllCars(board, existingCar);
+        existingCar=deleteCar(existingCar);
         existingCar=spawnCar(board, 10, false, existingCar);
     }
     return 0;
