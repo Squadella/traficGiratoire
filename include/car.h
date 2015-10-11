@@ -62,5 +62,7 @@ listCar setDest(listCar tmpCar);
 listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous, Section zone, listCar existingCar);
 listCar spawnCar(char board[51][101], int probability, bool dangerous, listCar existingCar);
 listCar deleteCar(listCar existingCar);
+listCar removeBroken(listCar existingCar);
+listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y);
 
 #endif

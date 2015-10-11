@@ -88,6 +88,12 @@ listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar ex
     {
         speed=true;
     }
+    /* DEBUG
+    if(rand()%50!=0)
+    {
+        dangerous=false;
+    }
+    */
     if(board[0][44]==' ' && (rand()%probabilty)==0)
     {
         existingCar=newCar(0, 44, speed, direction, dangerous, s_in_north, existingCar);
@@ -139,7 +145,6 @@ listCar deleteCar(listCar existingCar)
     }
     listCar tmp = existingCar;
     listCar tmp2 = existingCar->next;
-    //listCar tmp3 = (tmp2==NULL) ? (NULL) : (tmp2->next);
     if(tmp->state==false)
     {
         free(existingCar);
@@ -158,6 +163,37 @@ listCar deleteCar(listCar existingCar)
             tmp=tmp2;
             tmp2=tmp2->next;
         }
+    }
+    return existingCar;
+}
+
+listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y)
+{
+    listCar tmp = existingCar;
+    while (tmp!=NULL)
+    {
+        if(tmp->x_pos==x && tmp->y_pos==y && tmp->broken==false)
+        {
+            printf("destroyed at %d | %d\n", tmp->x_pos, tmp->y_pos);
+            tmp->state=false;
+        }
+        tmp=tmp->next;
+    }
+    return existingCar;
+}
+
+listCar removeBroken(listCar existingCar)
+{
+    printf("removing broken shit\n");
+    listCar tmp = existingCar;
+    while(tmp!=NULL)
+    {
+        if(tmp->broken==true)
+        {
+            printf("we find broken shit at %d | %d\n", tmp->x_pos, tmp->y_pos);
+            existingCar=searchAndDestroy(existingCar, tmp->x_pos, tmp->y_pos);
+        }
+        tmp=tmp->next;
     }
     return existingCar;
 }

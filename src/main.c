@@ -15,6 +15,7 @@ int main()
     listCar existingCar=NULL;
     unsigned int mode;
     int probabilty=0;
+    bool dangerous=false;
     int i=0;
     struct timespec sleep_time;
     sleep_time.tv_sec = 0;
@@ -38,6 +39,10 @@ int main()
     {
         probabilty=10;
     }
+    if(mode==3)
+    {
+        dangerous=true;
+    }
 
     while (1)
     {
@@ -46,8 +51,9 @@ int main()
         ++i;
         nanosleep(&sleep_time, NULL);
         moveAllCars(board, existingCar);
+        existingCar=removeBroken(existingCar);
         existingCar=deleteCar(existingCar);
-        existingCar=spawnCar(board, probabilty, false, existingCar);
+        existingCar=spawnCar(board, probabilty, dangerous, existingCar);
     }
     return 0;
 }
