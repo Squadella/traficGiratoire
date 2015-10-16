@@ -1,18 +1,38 @@
-\documentclass[a4paper,12pt,titlepage]{report}
+\documentclass[a4paper,12pt]{report}
  
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
-\usepackage{titlepic}
 \usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{lipsum}
 
 \begin{document}
 
-\title{Projet autonome en Programmation C}
-\author{\textsc{BOUNIOL} Pierre\and \textsc{LE} Gregory}
-\date{\today}
-\titlepic{\includegraphics[scale=0.5]{Logo-ESIEA.jpg}}
-\maketitle
+\begin{titlepage}
+\begin{center}
+{\Huge Projet autonome en Programmation C}\\[4ex] 
+{\Large  \textsc{BOUNIOL} Pierre, \textsc{LE} Gregory}\\[4ex] 
+\today\\[8ex]
+\includegraphics[scale=0.6]{logo2.png}\\[59ex]
+\end{center}
+\raggedleft
+\includegraphics[scale=0.2]{Logo-ESIEA.jpg}
+\end{titlepage}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ex risus, tempus id fringilla faucibus, efficitur eu quam. Praesent eleifend sapien non felis accumsan egestas. Praesent odio nunc, tristique at tellus non, accumsan sagittis metus. Quisque vitae commodo ipsum, eget molestie velit. Fusce sed leo nec ante luctus euismod nec ut elit. Proin cursus tempus lorem ut scelerisque. Aliquam sodales, ex et laoreet egestas, eros arcu hendrerit nunc, sit amet venenatis ligula mauris at turpis. Aliquam a est eu nibh feugiat vehicula eu et dolor. Curabitur ac est iaculis, consequat tellus id, accumsan leo. Nullam id euismod metus. 
+\renewcommand{\contentsname}{Sommaire}
+
+\tableofcontents
+
+\part{Introduction}
+\lipsum{1}
+\part{Présentation du projet}
+\lipsum{1}
+\part{Réalisation}
+\lipsum{1}
+\part{Difficultées rencontrées}
+\lipsum{1}
+\part{Conclusion}
+\lipsum{1}
+
 \end{document}

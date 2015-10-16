@@ -37,4 +37,5 @@ main
 *.aux
 *.idx
 *.log
+*.toc
 *.synctex.gz
