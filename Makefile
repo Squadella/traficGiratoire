@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Werror -std=gnu99
+CFLAGS=-Wall -Werror -std=gnu99 -g
 INCDIR=include
 
 SRC=src/main.c src/interface.c src/car.c src/routes.c src/moves.c

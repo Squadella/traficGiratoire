@@ -26,6 +26,8 @@ void corner_south_east(char board[51][101], Car* vehicle);
 void corner_south_west(char board[51][101], Car* vehicle);
 void corner_north_west(char board[51][101], Car* vehicle);
 
+void fixBroken(char board[51][101], listCar vehicle);
+
 //Complete itineraries
   //Starting from the north
 void north_to_north(char board[51][101], Car* vehicle);

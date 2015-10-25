@@ -371,6 +371,15 @@ void round_west(char board[51][101], Car* vehicle)
     }
 }
 
+void fixBroken(char board[51][101], listCar vehicle)
+{
+    if(rand()%10==0)
+    {
+        printf("removing car at %d | %d\n", vehicle->x_pos, vehicle->y_pos);
+        removeCar(vehicle,board);
+    }
+}
+
 void corner_north_east(char board[51][101], Car* vehicle)
 {
 

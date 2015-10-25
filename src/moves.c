@@ -51,7 +51,7 @@ void moveAllCars(char board[51][101], listCar existingCar)
         }
         else
         {
-            //TRY TO FIX THE CAR
+            fixBroken(board,tmp);
         }
         tmp=tmp->next;
     }
@@ -61,7 +61,7 @@ void moveCar(Car* vehicle, char board[51][101], int x, int y)
 {
     if(board[vehicle->x_pos][vehicle->y_pos]!='A')
     {
-            board[vehicle->x_pos][vehicle->y_pos]=' ';
+        board[vehicle->x_pos][vehicle->y_pos]=' ';
         if(board[vehicle->x_pos+x][vehicle->y_pos+y]==' ' && vehicle->broken==false)
         {
             board[vehicle->x_pos+x][vehicle->y_pos+y]=vehicle->vehicle;
@@ -70,6 +70,7 @@ void moveCar(Car* vehicle, char board[51][101], int x, int y)
         {
             board[vehicle->x_pos+x][vehicle->y_pos+y]='A';
             vehicle->broken=true;
+            vehicle->vehicle='A';
         }
         vehicle->x_pos=vehicle->x_pos+x;
         vehicle->y_pos=vehicle->y_pos+y;
@@ -84,6 +85,7 @@ void changeZone(Car* vehicle, char board[51][101], int x, int y, Section enterin
 
 void removeCar(Car* vehicle, char board[51][101])
 {
+    printf("car removed\n");
     board[vehicle->x_pos][vehicle->y_pos]=' ';
     vehicle->state=false;
 }
