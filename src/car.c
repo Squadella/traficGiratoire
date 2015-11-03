@@ -173,7 +173,7 @@ listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y
         if(tmp->x_pos==x && tmp->y_pos==y && tmp->broken==false)
         {
             printf("car %d|%d set to false", tmp->x_pos, tmp->y_pos);
-            tmp->state=false;
+            tmp->broken=true;
         }
         tmp=tmp->next;
     }
@@ -188,6 +188,8 @@ listCar searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y
         if(tmp->x_pos==x && tmp->y_pos==y && tmp->broken==false)
         {
             printf("car searched is: %d", tmp->state);
+            tmp->vehicle='A';
+            tmp->state=false;
         }
         tmp=tmp->next;
     }

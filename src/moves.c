@@ -62,18 +62,14 @@ void moveCar(Car* vehicle, char board[51][101], int x, int y)
     if(board[vehicle->x_pos][vehicle->y_pos]!='A')
     {
         board[vehicle->x_pos][vehicle->y_pos]=' ';
-        if(board[vehicle->x_pos+x][vehicle->y_pos+y]==' ' && vehicle->broken==false)
+        if(board[vehicle->x_pos+x][vehicle->y_pos+y]!=' ')
         {
-            board[vehicle->x_pos+x][vehicle->y_pos+y]=vehicle->vehicle;
-        }
-        else
-        {
-            board[vehicle->x_pos+x][vehicle->y_pos+y]='A';
-            vehicle->broken=true;
-            vehicle->vehicle='A';
+                vehicle->broken=true;
+                vehicle->vehicle='A';
         }
         vehicle->x_pos=vehicle->x_pos+x;
         vehicle->y_pos=vehicle->y_pos+y;
+        board[vehicle->x_pos][vehicle->y_pos]=vehicle->vehicle;
     }
 }
 
@@ -97,4 +93,30 @@ bool obeyToCode()
         return false;
     }
     return true;
+}
+
+void refreshBoard(listCar existingCar, char board[51][101])
+{
+    for(int i=0; i<51; ++i)
+    {
+        for(int j=0; j<101; ++j)
+        {
+            board[i][j]=' ';
+        }
+    }
+    listCar tmp=existingCar;
+    while (tmp!=NULL)
+    {
+        if(tmp->broken==true)
+        {
+            tmp->vehicle='A';
+        }
+        tmp=tmp->next;
+    }
+    tmp=existingCar;
+    while (tmp!=NULL)
+    {
+        board[tmp->x_pos][tmp->y_pos]=tmp->vehicle;
+        tmp=tmp->next;
+    }
 }

@@ -220,7 +220,7 @@ void round_north(char board[51][101], Car* vehicle)
     }
     else if(vehicle->dangerous && !obeyToCode())
     {
-        if(vehicle->x_pos==16)
+        if(vehicle->x_pos==16 && (vehicle->y_pos!=72 || vehicle->y_pos!=28))
         {
             moveCar(vehicle, board, 1, 0);
         }

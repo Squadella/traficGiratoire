@@ -38,3 +38,4 @@ main
 *.idx
 *.log
 *.synctex.gz
+/core
