@@ -499,3 +499,21 @@ void fixBroken(char board[51][101], listCar vehicle)
         removeCar(vehicle,board);
     }
 }
+
+void randHs(char board[51][101], listCar vehicle)
+{
+    if(rand()%1000==0)
+    {
+        vehicle->hs=true;
+        vehicle->vehicle='P';
+        board[vehicle->x_pos][vehicle->y_pos]='P';
+    }
+}
+
+void fixHs(char board[51][101], listCar vehicle)
+{
+    if(rand()%10==0)
+    {
+        vehicle->state=false;
+    }
+}

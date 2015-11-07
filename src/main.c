@@ -39,19 +39,6 @@ int main()
         dangerous=true;
     }
 
-    //DEBUG
-    /*
-    probabilty++;
-    dangerous++;
-    existingCar = newCar(17, 34, false, 'E', false, s_round_north, existingCar);
-    board[17][34]='E';
-    existingCar = newCar(17, 35, false, 'E', false, s_round_north, existingCar);
-    board[17][35]='E';
-    existingCar = newCar(17, 33, false, 'E', false, s_round_north, existingCar);
-    existingCar->next->next->broken=true;
-    board[17][33]='A';
-    */
-
     while (1)
     {
         showAllCars(existingCar);

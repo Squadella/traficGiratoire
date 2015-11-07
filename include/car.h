@@ -50,6 +50,7 @@ struct Car
 
   bool state; //TRUE=active, FALSE=inactive
   bool broken; //TRUE=broken down, FALSE=intact
+  bool hs;
   bool dangerous;
 
   struct Car *next;

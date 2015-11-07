@@ -61,6 +61,7 @@ listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous,
     carTmp->state=true;
     carTmp->broken=false;
     carTmp->next=NULL;
+    carTmp->hs=false;
     carTmp->dangerous=dangerous;
     carTmp=setDest(carTmp);
 

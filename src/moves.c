@@ -5,7 +5,7 @@ void moveAllCars(char board[51][101], listCar existingCar)
     listCar tmp = existingCar;
     while (tmp != NULL)
     {
-        if(tmp->broken==false)
+        if(tmp->broken==false && tmp->hs==false)
         {
             switch (tmp->current_section)
             {
@@ -52,14 +52,16 @@ void moveAllCars(char board[51][101], listCar existingCar)
         else
         {
             fixBroken(board,tmp);
+            fixHs(board, tmp);
         }
+        randHs(board, tmp);
         tmp=tmp->next;
     }
 }
 
 void moveCar(Car* vehicle, char board[51][101], int x, int y)
 {
-    if(board[vehicle->x_pos][vehicle->y_pos]!='A')
+    if(board[vehicle->x_pos][vehicle->y_pos]!='A' && board[vehicle->x_pos][vehicle->y_pos]!='P')
     {
         board[vehicle->x_pos][vehicle->y_pos]=' ';
         if(board[vehicle->x_pos+x][vehicle->y_pos+y]!=' ')
