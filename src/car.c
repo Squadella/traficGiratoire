@@ -88,7 +88,7 @@ listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar ex
     {
         speed=true;
     }
-    if(rand()%40!=0)
+    if(rand()%20!=0)
     {
         dangerous=false;
     }

@@ -22,13 +22,7 @@ int main()
     sleep_time.tv_nsec = 500000000L; //125 000 000
     int i=0;
 
-    for (int i = 0; i < 51; ++i)
-    {
-        for(int j=0; j < 101; ++j)
-        {
-            board[i][j]=' ';
-        }
-    }
+    refreshBoard(existingCar, board);
 
     mode = mainMenu();
 
