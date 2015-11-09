@@ -50,6 +50,7 @@ struct Car
 
   bool state; //TRUE=active, FALSE=inactive
   bool broken; //TRUE=broken down, FALSE=intact
+  bool hs;
   bool dangerous;
 
   struct Car *next;
@@ -61,6 +62,12 @@ char chooseDest();
 listCar setDest(listCar tmpCar);
 listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous, Section zone, listCar existingCar);
 listCar spawnCar(char board[51][101], int probability, bool dangerous, listCar existingCar);
-listCar deleteCar(listCar existingCar);
+listCar deleteCar(listCar existingCar, char board[51][101]);
+listCar removeBroken(listCar existingCar);
+listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y);
+
+//DEBUG FUNC
+listCar searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y);
+void showAllCars(listCar existingCar);
 
 #endif

@@ -14,19 +14,15 @@ int main()
     char board[51][101];
     listCar existingCar=NULL;
     unsigned int mode;
-    int probabilty=0;
-    int i=0;
+    //DEBUG
     struct timespec sleep_time;
+    int probabilty=0;
+    bool dangerous=false;
     sleep_time.tv_sec = 0;
-    sleep_time.tv_nsec = 300000000L; //125 000 000
+    sleep_time.tv_nsec = 500000000L; //125 000 000
+    int i=0;
 
-    for (int i = 0; i < 51; ++i)
-    {
-        for(int j=0; j < 101; ++j)
-        {
-            board[i][j]=' ';
-        }
-    }
+    refreshBoard(existingCar, board);
 
     mode = mainMenu();
 
@@ -38,16 +34,23 @@ int main()
     {
         probabilty=10;
     }
+    if(mode==3)
+    {
+        dangerous=true;
+    }
 
     while (1)
     {
+        showAllCars(existingCar);
         affichage(board);
         printf("%d\n", i);
         ++i;
         nanosleep(&sleep_time, NULL);
         moveAllCars(board, existingCar);
-        existingCar=deleteCar(existingCar);
-        existingCar=spawnCar(board, probabilty, false, existingCar);
+        existingCar=removeBroken(existingCar);
+        refreshBoard(existingCar, board);
+        existingCar=deleteCar(existingCar, board);
+        existingCar=spawnCar(board, probabilty, dangerous, existingCar);
     }
     return 0;
 }

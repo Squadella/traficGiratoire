@@ -39,3 +39,4 @@ main
 *.log
 *.toc
 *.synctex.gz
+/core
