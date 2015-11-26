@@ -14,7 +14,6 @@ int main()
     char board[51][101];
     listCar existingCar=NULL;
     unsigned int mode;
-    //DEBUG
     struct timespec sleep_time;
     int probabilty=0;
     bool dangerous=false;

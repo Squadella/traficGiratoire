@@ -1,5 +1,6 @@
 #include "car.h"
 
+
 char chooseDest()
 {
     switch (rand()%4)

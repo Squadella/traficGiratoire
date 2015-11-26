@@ -40,3 +40,4 @@ main
 *.toc
 *.synctex.gz
 /core
+/doc

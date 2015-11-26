@@ -1,5 +1,6 @@
 #include "routes.h"
 
+//Managing the moves of cars in the north insertion branch
 void in_north(char board[51][101], Car* vehicle)
 {
     if(vehicle->dangerous && vehicle->x_pos!=15 && !obeyToCode())
@@ -46,6 +47,8 @@ void in_north(char board[51][101], Car* vehicle)
         }
     }
 }
+
+//Managing the moves of cars in the north outgoing branch
 void out_north(char board[51][101], Car* vehicle)
 {
     if(vehicle->dangerous && vehicle->x_pos!=0 && !obeyToCode())
@@ -69,6 +72,7 @@ void out_north(char board[51][101], Car* vehicle)
     }
 }
 
+//Managing the moves of cars in the east insertion branch
 void in_east(char board[51][101], Car* vehicle)
 {
     if (vehicle->dangerous && vehicle->y_pos!=74 && !obeyToCode())
@@ -118,6 +122,8 @@ void in_east(char board[51][101], Car* vehicle)
         }
     }
 }
+
+//Managing the moves of cars in the east outgoing branch
 void out_east(char board[51][101], Car* vehicle)
 {
     if(vehicle->dangerous && vehicle->y_pos!=100 && !obeyToCode())
@@ -141,6 +147,7 @@ void out_east(char board[51][101], Car* vehicle)
     }
 }
 
+//Managing the moves of cars in the south insertion branch
 void in_south(char board[51][101], Car* vehicle)
 {
     if(vehicle->dangerous && vehicle->x_pos!=35 && !obeyToCode())
@@ -190,6 +197,8 @@ void in_south(char board[51][101], Car* vehicle)
         }
     }
 }
+
+//Managing the moves of cars in the south outgoing branch
 void out_south(char board[51][101], Car* vehicle)
 {
     if(vehicle->dangerous && vehicle->x_pos!=50 && !obeyToCode())
@@ -213,6 +222,7 @@ void out_south(char board[51][101], Car* vehicle)
     }
 }
 
+//Managing the moves of cars in the west insertion branch
 void in_west(char board[51][101], Car* vehicle)
 {
     if(vehicle->dangerous && vehicle->y_pos!=26 && !obeyToCode())
@@ -259,6 +269,8 @@ void in_west(char board[51][101], Car* vehicle)
         }
     }
 }
+
+//Managing the moves of cars in the west outgoing branch
 void out_west(char board[51][101], Car* vehicle)
 {
     if(vehicle->dangerous && vehicle->y_pos!=0 && !obeyToCode())
@@ -285,6 +297,7 @@ void out_west(char board[51][101], Car* vehicle)
     }
 }
 
+//Managing the moves of cars in the north section of the giratoire
 void round_north(char board[51][101], Car* vehicle)
 {
     if(((vehicle->x_pos==16 && vehicle->y_pos==28) && board[17][27]==' ')||((vehicle->x_pos==17 && vehicle->y_pos==29) && board[18][28]==' '))
@@ -337,6 +350,8 @@ void round_north(char board[51][101], Car* vehicle)
     }
 
 }
+
+//Managing the moves of cars in the east section of the giratoire
 void round_east(char board[51][101], Car* vehicle)
 {
     if((vehicle->x_pos==17 && vehicle->y_pos==73) || (vehicle->x_pos==18 && vehicle->y_pos==72))
@@ -390,6 +405,8 @@ void round_east(char board[51][101], Car* vehicle)
         }
     }
 }
+
+//Managing the moves of cars in the south section of the giratoire
 void round_south(char board[51][101], Car* vehicle)
 {
     if((vehicle->x_pos==33 && vehicle->y_pos==71 && board[vehicle->x_pos-1][vehicle->y_pos+1]==' ')||(vehicle->x_pos==34 && vehicle->y_pos==72 && board[vehicle->x_pos-1][vehicle->y_pos+1]==' '))
@@ -440,6 +457,8 @@ void round_south(char board[51][101], Car* vehicle)
         }
     }
 }
+
+//Managing the moves of cars in the west section of the giratoire
 void round_west(char board[51][101], Car* vehicle)
 {
     if((vehicle->x_pos==33 && vehicle->y_pos==27 && board[34][28]==' ') || (vehicle->x_pos==32 && vehicle->y_pos==28 && board[33][29]==' '))
@@ -491,6 +510,7 @@ void round_west(char board[51][101], Car* vehicle)
     }
 }
 
+//Random change of repairing a broken car
 void fixBroken(char board[51][101], listCar vehicle)
 {
     if(rand()%10==0)
@@ -500,6 +520,7 @@ void fixBroken(char board[51][101], listCar vehicle)
     }
 }
 
+//Random probabilty of a car breaking
 void randHs(char board[51][101], listCar vehicle)
 {
     if(rand()%1000==0)
@@ -510,6 +531,7 @@ void randHs(char board[51][101], listCar vehicle)
     }
 }
 
+//Random probabilty of a broken car being fixed
 void fixHs(char board[51][101], listCar vehicle)
 {
     if(rand()%10==0)
