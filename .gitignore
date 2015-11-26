@@ -39,3 +39,4 @@ main
 *.log
 *.synctex.gz
 /core
+/doc

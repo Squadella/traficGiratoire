@@ -1,6 +1,6 @@
 #include "car.h"
 
-//Choose a destination
+
 char chooseDest()
 {
     switch (rand()%4)
@@ -21,7 +21,6 @@ char chooseDest()
     return 'X';
 }
 
-//Set destination on a car
 listCar setDest(listCar tmpCar)
 {
     switch (tmpCar->vehicle)
@@ -52,7 +51,6 @@ listCar setDest(listCar tmpCar)
     return tmpCar;
 }
 
-//Create and add a new to to the linked list
 listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous, Section zone, listCar existingCar)
 {
     Car* carTmp = (Car*)malloc(sizeof(Car));
@@ -83,7 +81,6 @@ listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous,
     return existingCar;
 }
 
-//Initialise and place a car on the board
 listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar existingCar)
 {
     bool speed=false;
@@ -140,7 +137,6 @@ listCar spawnCar(char board[51][101], int probabilty, bool dangerous, listCar ex
     return existingCar;
 }
 
-//Remove a car from the linked list
 listCar deleteCar(listCar existingCar, char board[51][101])
 {
     if(existingCar==NULL)
@@ -171,7 +167,6 @@ listCar deleteCar(listCar existingCar, char board[51][101])
     return existingCar;
 }
 
-//Remove any duplicate car (case used for accidents)
 listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y)
 {
     listCar tmp = existingCar;
@@ -187,7 +182,6 @@ listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y
     return existingCar;
 }
 
-//Shearch a car with given parametres and print it
 listCar searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y)
 {
     listCar tmp = existingCar;
@@ -204,7 +198,6 @@ listCar searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y
     return existingCar;
 }
 
-//When 2 cars collide remove the non dangerous one
 listCar removeBroken(listCar existingCar)
 {
     printf("removing broken shit\n");
@@ -220,7 +213,6 @@ listCar removeBroken(listCar existingCar)
     return existingCar;
 }
 
-//Function for printing all the car present in the list
 void showAllCars(listCar existingCar)
 {
     listCar tmp = existingCar;
