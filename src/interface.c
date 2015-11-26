@@ -1,7 +1,6 @@
 #include "interface.h"
 
-/*                                              */ //46 espaces
-
+//Print and return the information in the main menu
 unsigned int mainMenu()
 {
     system("clear");
@@ -37,6 +36,7 @@ unsigned int mainMenu()
     return mode;
 }
 
+//Print the giratoire with the given board
 void affichage(char board[51][101])
 {
     system("clear");

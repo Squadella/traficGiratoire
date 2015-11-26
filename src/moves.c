@@ -1,5 +1,6 @@
 #include "moves.h"
 
+//Goes throught all the linked list and apply the good mooving function
 void moveAllCars(char board[51][101], listCar existingCar)
 {
     listCar tmp = existingCar;
@@ -59,6 +60,7 @@ void moveAllCars(char board[51][101], listCar existingCar)
     }
 }
 
+//Make a vehicle move on the board and in the linked list
 void moveCar(Car* vehicle, char board[51][101], int x, int y)
 {
     if(board[vehicle->x_pos][vehicle->y_pos]!='A' && board[vehicle->x_pos][vehicle->y_pos]!='P')
@@ -75,12 +77,14 @@ void moveCar(Car* vehicle, char board[51][101], int x, int y)
     }
 }
 
+//Refresh the information in the linked list of the car zone
 void changeZone(Car* vehicle, char board[51][101], int x, int y, Section entering)
 {
     vehicle->current_section=entering;
     moveCar(vehicle, board, x, y);
 }
 
+//Set the flag state to false for future removal
 void removeCar(Car* vehicle, char board[51][101])
 {
     printf("car removed\n");
@@ -88,6 +92,7 @@ void removeCar(Car* vehicle, char board[51][101])
     vehicle->state=false;
 }
 
+//Change of a dangerous drive to disrespect code
 bool obeyToCode()
 {
     if(rand()%10==0)
@@ -97,6 +102,7 @@ bool obeyToCode()
     return true;
 }
 
+//Refresh the array with the data in the linked list
 void refreshBoard(listCar existingCar, char board[51][101])
 {
     for(int i=0; i<51; ++i)
