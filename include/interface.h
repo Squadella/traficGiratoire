@@ -9,12 +9,12 @@
 #include <errno.h>
 #include <string.h>
 
-///Print the main menu and return the player mode selection.
+///Prints the main menu and returns the selected mode.
 unsigned int mainMenu();
 
 /*! \fn void affichage(char board[51][101])
-    \brief Print the playing board.
-    \param board The playing board with all the cars on it.*/
+    \brief Prints the board.
+    \param board The board containing all of the cars.*/
 void affichage(char board[51][101]);
 
 #endif

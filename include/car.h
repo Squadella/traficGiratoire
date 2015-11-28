@@ -1,5 +1,5 @@
 /*! \file car.h
-    \brief This file define all the cars of the giratoire.
+    \brief This file defines all the cars of the giratoire.
 */
 #ifndef CAR_H
 #define CAR_H
@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 /*! \struct Direction */
-///Implements the different destination of a driver.
+///Implements the different destinations of a driver.
 typedef enum Direction
 {
   north,
@@ -19,7 +19,7 @@ typedef enum Direction
 } Direction;
 
 /*! \struct Section */
-///All the zone of the giratoire.
+///Defines the different zones of the giratoire.
 typedef enum Section
 {
   s_in_north,
@@ -40,92 +40,92 @@ typedef enum Section
   s_corner_north_west,
 } Section;
 
-///Define the Car type.
+///Definition of the Car type.
 typedef struct Car Car;
 
 /*! \struct Car */
-///The structure for the car to make a linked list.
+///The Car structure uesd to build a linked list containing existing cars.
 struct Car
 {
   //N(orth), S(outh), E(ast), W(est), D(angerous), B(roken down), A(ccident)
-  char vehicle;                 ///<Define what will be printed on the board.
-  bool speed;                   ///<Define the speed of a car (TRUE=fast, FALSE=slow).
-  unsigned short x_pos;         ///<Define the x position of a car.
-  unsigned short y_pos;         ///<Define the y position of a car.
+  char vehicle;                 ///<Defines what will be printed on the board.
+  bool speed;                   ///<Define sthe speed of a car (TRUE=fast, FALSE=slow).
+  unsigned short x_pos;         ///<Defines the x position of a car.
+  unsigned short y_pos;         ///<Defines the y position of a car.
 
-  Direction destination;        ///<Define the destination of the driver.
-  Section current_section;      ///<Define the zone where the driver is on the board.
+  Direction destination;        ///<Defines the destination of the car.
+  Section current_section;      ///<Defines the zone where the driver currently is.
 
-  bool state;                   ///<Define if the car have to be deleted (TRUE=active, FALSE=inactive).
-  bool broken;                  ///<Define if the car is broken (TRUE=broken down, FALSE=intact).
-  bool hs;                      ///<Define if the car break down by itself (TRUE=broken down, FALSE=intact).
-  bool dangerous;               ///<Define if the driver of the car is dangerous.
+  bool state;                   ///<Defines if the car has to be deleted (TRUE=active, FALSE=inactive).
+  bool broken;                  ///<Defines if the car is broken (TRUE=broken down, FALSE=intact).
+  bool hs;                      ///<Defines if the car has broken down by itself (TRUE=broken down, FALSE=intact).
+  bool dangerous;               ///<Defines if the driver of the car is dangerous.
 
   struct Car *next;            ///<Pointer on next element of the list.
 };
 
-///Define the listCar type.
+///Defines the listCar type.
 typedef Car* listCar;
 
-///Return a random destination.
+///Returns a random destination.
 char chooseDest();
 
 /*! \fn listCar setDest(listCar tmpCar)
-    \brief Set a destination for a car.
+    \brief Sets a destination for a car.
     \param tmpCar A car. */
 listCar setDest(listCar tmpCar);
 
 /*! \fn listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous, Section zone, listCar existingCar)
-    \brief Create a new car.
-    \param x_pos The position on the x axis of the car.
-    \param y_pos The position on the y axis of the car.
-    \param speed Is the car is slow or fast.
+    \brief Creates a new car.
+    \param x_pos The position of the car on the x axis.
+    \param y_pos The position of the car on the y axis.
+    \param speed Is the car slow or fast.
     \param direction The destination of the driver.
-    \param dangerous The flag for know if the car is dangerous.
+    \param dangerous The flag to know if the car is dangerous.
     \param zone The current zone of the vehicle.
-    \param existingCar The previous car in the board.
+    \param existingCar List of already existing cars.
     \return A new car. */
 listCar newCar(int x_pos, int y_pos, bool speed, char direction, bool dangerous, Section zone, listCar existingCar);
 
 /*! \fn listCar spawnCar(char board[51][101], int probability, bool dangerous, listCar existingCar)
-    \brief Create a new car and place it on the board.
-    \param board The playing board with all the cars on it.
-    \param probability The chance of a car to spawn.
-    \param dangerous The flag for know if the car is dangerous.
-    \param existingCar The previous car in the board.
+    \brief Creates a new car and places it on the board.
+    \param board The board with all the cars on it.
+    \param probability The chance for a car to spawn.
+    \param dangerous The flag to know if the car is dangerous.
+    \param existingCar List of already existing cars.
     \return The list of cars. */
 listCar spawnCar(char board[51][101], int probability, bool dangerous, listCar existingCar);
 
 /*! \fn listCar deleteCar(listCar existingCar, char board[51][101])
-    \brief Remove a car from the linked list.
-    \param existingCar The previous car in the board.
-    \param board The playing board with all the cars on it.
-    \return The list witout the removed car. */
+    \brief Removes a car from the linked list.
+    \param existingCar List of already existing cars.
+    \param board The board with all the cars on it.
+    \return The list without the removed car. */
 listCar deleteCar(listCar existingCar, char board[51][101]);
 
 /*! \fn listCar removeBroken(listCar existingCar)
-    \brief Remove a duplicate when to car crashes.
-    \param existingCar The previous car in the board. */
+    \brief Removes a duplicate when two car crash together.
+    \param existingCar List of already existing cars. */
 listCar removeBroken(listCar existingCar);
 
 /*! \fn listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y)
-    \brief Search a car and remove it for the linked list.
-    \param existingCar The previous car in the board.
-    \param x The x value of the vehicle searched.
-    \param y The y value of the vehicle searched.
+    \brief Searches for a car and removes it for the linked list.
+    \param existingCar List of already existing cars.
+    \param x The x position of the researched vehicle.
+    \param y The y position of the researched vehicle.
     \return The list without the destroyed car.*/
 listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y);
 
 /*! \fn void searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y)
-    \brief Search a car and print it.
-    \param existingCar The previous car in the board.
-    \param x The x value of the vehicle searched.
-    \param y The y value of the vehicle searched.*/
+    \brief Searches for a car and prints it.
+    \param existingCar List of already existing cars.
+    \param x The x position of the researched vehicle.
+    \param y The y position of the researched vehicle.*/
 void searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y);
 
 /*! \fn void showAllCars(listCar existingCar)
-    \brief Print all the cars present in the linked list.
-    \param existingCar The previous car in the board.*/
+    \brief Prints all of the cars present in the linked list.
+    \param existingCar List of already existing cars.*/
 void showAllCars(listCar existingCar);
 
 #endif
