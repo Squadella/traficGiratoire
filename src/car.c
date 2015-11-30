@@ -182,22 +182,6 @@ listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y
     return existingCar;
 }
 
-listCar searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y)
-{
-    listCar tmp = existingCar;
-    while (tmp!=NULL)
-    {
-        if(tmp->x_pos==x && tmp->y_pos==y && tmp->broken==false)
-        {
-            printf("car searched is: %d", tmp->state);
-            tmp->vehicle='A';
-            tmp->state=false;
-        }
-        tmp=tmp->next;
-    }
-    return existingCar;
-}
-
 listCar removeBroken(listCar existingCar)
 {
     printf("removing broken shit\n");
@@ -211,14 +195,4 @@ listCar removeBroken(listCar existingCar)
         tmp=tmp->next;
     }
     return existingCar;
-}
-
-void showAllCars(listCar existingCar)
-{
-    listCar tmp = existingCar;
-    while(tmp!=NULL)
-    {
-        printf("%d, %d, %d\n", tmp->x_pos, tmp->y_pos, tmp->broken);
-        tmp=tmp->next;
-    }
 }

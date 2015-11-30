@@ -40,7 +40,6 @@ int main()
 
     while (1)
     {
-        showAllCars(existingCar);
         affichage(board);
         printf("%d\n", i);
         ++i;

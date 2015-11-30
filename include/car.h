@@ -40,7 +40,7 @@ typedef enum Section
 typedef struct Car Car;
 
 /*! \struct Car */
-///The Car structure uesd to build a linked list containing existing cars.
+///The Car structure used to build a linked list containing existing cars.
 struct Car
 {
   //N(orth), S(outh), E(ast), W(est), D(angerous), B(roken down), A(ccident)
@@ -111,17 +111,4 @@ listCar removeBroken(listCar existingCar);
     \param y The y position of the researched vehicle.
     \return The list without the destroyed car.*/
 listCar searchAndDestroy(listCar existingCar, unsigned short x, unsigned short y);
-
-/*! \fn void searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y)
-    \brief Searches for a car and prints it.
-    \param existingCar List of already existing cars.
-    \param x The x position of the researched vehicle.
-    \param y The y position of the researched vehicle.*/
-void searchAndDisplay(listCar existingCar, unsigned short x, unsigned short y);
-
-/*! \fn void showAllCars(listCar existingCar)
-    \brief Prints all of the cars present in the linked list.
-    \param existingCar List of already existing cars.*/
-void showAllCars(listCar existingCar);
-
 #endif
