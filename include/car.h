@@ -8,36 +8,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*! \struct Direction */
-///Implements the different destinations of a driver.
+/*! \enum Direction
+    \brief Implements the different destinations of a driver.*/
 typedef enum Direction
 {
-  north,
-  east,
-  south,
-  west
+  north,/*!< Nothern destination.*/
+  east,/*!< Eastern destination.*/
+  south,/*!< Southern destination.*/
+  west/*!< Western destination.*/
 } Direction;
 
-/*! \struct Section */
-///Defines the different zones of the giratoire.
+/*! \enum Section
+    \brief Defines the different zones of the giratoire.*/
 typedef enum Section
 {
-  s_in_north,
-  s_in_east,
-  s_in_south,
-  s_in_west,
-  s_out_north,
-  s_out_east,
-  s_out_south,
-  s_out_west,
-  s_round_north,
-  s_round_east,
-  s_round_south,
-  s_round_west,
-  s_corner_north_east,
-  s_corner_south_east,
-  s_corner_south_west,
-  s_corner_north_west,
+  s_in_north,/*!< Northern insertion branch.*/
+  s_in_east,/*!< Eastern insertion branch.*/
+  s_in_south,/*!< Southern insertion branch.*/
+  s_in_west,/*!< Western insertion branch.*/
+  s_out_north,/*!< Northern outgoing branch.*/
+  s_out_east,/*!< Eastern outgoing branch.*/
+  s_out_south,/*!< Southern outgoing branch.*/
+  s_out_west,/*!< Western outgoing branch.*/
+  s_round_north,/*!< Northern giratoire zone.*/
+  s_round_east,/*!< Eastern giratoire zone.*/
+  s_round_south,/*!< Southern giratoire zone.*/
+  s_round_west,/*!< Western giratoire zone.*/
 } Section;
 
 ///Definition of the Car type.
@@ -61,7 +57,7 @@ struct Car
   bool hs;                      ///<Defines if the car has broken down by itself (TRUE=broken down, FALSE=intact).
   bool dangerous;               ///<Defines if the driver of the car is dangerous.
 
-  struct Car *next;            ///<Pointer on next element of the list.
+  struct Car *next;             ///<Pointer on next element of the list.
 };
 
 ///Defines the listCar type.
